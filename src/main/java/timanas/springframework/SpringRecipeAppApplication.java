@@ -17,7 +17,7 @@ public class SpringRecipeAppApplication {
 
  Notes:
  - Notes and Recipe share a One To One relationship
-
+ - We literally SPECIFY in the annotation if we want OneToOne, OneToMany ...etc
 
  Question:
  Why is id a generated value ?
