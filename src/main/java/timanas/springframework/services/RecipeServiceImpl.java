@@ -6,12 +6,12 @@ import timanas.springframework.domain.Recipe;
 import timanas.springframework.repositories.RecipeRepository;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 /**
  * Created by timmanas on 2019-11-26.
  */
-@Slf4j
 @Service
 public class RecipeServiceImpl implements RecipeService {
 
@@ -23,10 +23,20 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Set<Recipe> getRecipes() {
-        log.debug("RecipeService Implemntation");
-
         Set<Recipe> recipeSet = new HashSet<>();
         recipeRepository.findAll().iterator().forEachRemaining(recipeSet::add);
         return recipeSet;
+    }
+
+    @Override
+    public Recipe findById(Long l) {
+
+        Optional<Recipe> recipeOptional = recipeRepository.findById(l);
+
+        if (!recipeOptional.isPresent()) {
+            throw new RuntimeException("Recipe Not Found!");
+        }
+
+        return recipeOptional.get();
     }
 }

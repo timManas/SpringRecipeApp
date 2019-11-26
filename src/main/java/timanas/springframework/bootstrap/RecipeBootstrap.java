@@ -1,5 +1,6 @@
 package timanas.springframework.bootstrap;
 
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -18,7 +19,6 @@ import java.util.Optional;
 /**
  * Created by timmanas on 2019-11-26.
  */
-@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -36,7 +36,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     @Transactional
     public void onApplicationEvent(ContextRefreshedEvent event) {
         recipeRepository.saveAll(getRecipes());
-        log.debug("Loading Bootstrap data");
     }
 
     private List<Recipe> getRecipes() {

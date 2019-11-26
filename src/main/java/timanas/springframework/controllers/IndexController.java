@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import timanas.springframework.services.RecipeService;
 
 @Controller
-@Slf4j
 public class IndexController {
 
     private final RecipeService recipeService;
@@ -18,7 +17,6 @@ public class IndexController {
 
     @RequestMapping({"", "/", "/index"})
     public String getIndexPage(Model model) {
-        log.debug("Fetch Index Page");
         model.addAttribute("recipes", recipeService.getRecipes());
 
         return "index";
