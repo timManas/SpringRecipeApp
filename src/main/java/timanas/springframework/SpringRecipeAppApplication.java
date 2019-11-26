@@ -11,3 +11,16 @@ public class SpringRecipeAppApplication {
 	}
 
 }
+
+
+/**
+
+ Notes:
+ - Notes and Recipe share a One To One relationship
+
+
+ Question:
+ Why is id a generated value ?
+ What is id used for ?
+
+ */
