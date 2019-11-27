@@ -23,6 +23,7 @@ public class SpringRecipeAppApplication {
  - Spring boot will load from schema-${platform}.sql and data-${platform}.sql
  - Remember - We are able to query entries in the database by using the
  Optional<xxxx> findByDescription(String description)
+ - Think of the Controller as the Router which routes to the proper destination (UI view)
 
  Question:
  Why is id a generated value ?
