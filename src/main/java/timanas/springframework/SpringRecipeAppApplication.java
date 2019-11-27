@@ -37,4 +37,10 @@ public class SpringRecipeAppApplication {
  	- Not for UI =)
   	- It is the part which does the actual creation of Data into DB which gets used by the Service > Controller > Index > HTML
 
+ How do you perform CRUD operations?
+ 1. Add Service
+ 2. Implement Service
+ 3. Add Action to Controller
+ 4. Invoke the View (html template) uisng thymeleaf
+
  */
