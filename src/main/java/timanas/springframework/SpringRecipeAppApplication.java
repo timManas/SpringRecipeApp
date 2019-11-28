@@ -37,6 +37,9 @@ public class SpringRecipeAppApplication {
  	- Not for UI =)
   	- It is the part which does the actual creation of Data into DB which gets used by the Service > Controller > Index > HTML
 
+ How to add objects to UI ?
+ - use model.addAttribute() or use. mode.AddObjects() so you can print those to the browser
+
  How do you perform CRUD operations?
  1. Add Service
  2. Implement Service
