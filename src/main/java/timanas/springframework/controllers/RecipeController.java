@@ -1,10 +1,13 @@
 package timanas.springframework.controllers;
 
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import timanas.springframework.commands.RecipeCommand;
+import timanas.springframework.exception.NotFoundException;
 import timanas.springframework.services.RecipeService;
 
 @Controller
@@ -48,5 +51,16 @@ public class RecipeController {
 
         recipeService.deleteById(Long.valueOf(id));
         return "redirect:/";
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(NotFoundException.class)
+    public ModelAndView handleNotFound(){
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.setViewName("404error");               // Brings up the view
+
+        return modelAndView;
     }
 }
