@@ -3,6 +3,7 @@ package timanas.springframework.bootstrap;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import timanas.springframework.domain.*;
@@ -20,6 +21,7 @@ import java.util.Optional;
  * Created by timmanas on 2019-11-26.
  */
 @Component
+@Profile("default")
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     private final CategoryRepository categoryRepository;
