@@ -40,6 +40,20 @@ public class SpringRecipeAppApplication {
  How to add objects to UI ?
  - use model.addAttribute() or use. mode.AddObjects() so you can print those to the browser
 
+ How to generate a jar file ?
+ - Click on the package button on the Maven tab
+
+ 2. Jar file
+ ex. spring-boot-web-0.0.1-SNAPSHOT.jar
+
+ Execute this command:
+ - docker build -t spring-boot-docker .
+ - docker run -d -p 8080:8080 spring-boot-docker
+ - Wait a couple mins
+ - Check logs are working
+ - Check webpage =)
+ - Done
+
  How do you perform CRUD operations?
  1. Add Service
  2. Implement Service
